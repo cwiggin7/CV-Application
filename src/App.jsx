@@ -49,6 +49,8 @@ function App() {
     <div className="app-container">
       <div className="resume">
         <BasicInfoSection />
+
+<div className="experience-header">Experience</div>
         {experienceSections.map((e, index) => (
           <ExperienceInfoSection
             key={e.id}
@@ -57,6 +59,7 @@ function App() {
         ))}
         <button onClick={addExperienceSection}>Add Job</button>
 
+        <div className="experience-header">Education</div>
         {educationSections.map((e, index) => (
           <EducationSection
             key={e.id}
