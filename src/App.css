@@ -1,0 +1,33 @@
+.resume {
+  margin: 20px auto;
+  width: 800px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+  padding: 30px;
+}
+
+form {
+  border: 1px solid red;
+  border-radius: 5px;
+}
+
+.general-form {
+  display: grid;
+  grid-template: repeat(3, 1fr) / 1fr 1fr;
+}
+
+.name {
+  grid-column: 1 / 3;
+}
+
+input {
+  outline: none;
+  border: none;
+  display: block;
+}
+
+.JobDuration,
+.SchoolDuration {
+  display: flex;
+}
