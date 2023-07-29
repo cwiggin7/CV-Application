@@ -1,12 +1,13 @@
 import "./App.css";
-import BasicInfoSection from "./components/BasicInfoSection";
-import ExperienceInfoSection from "./components/ExperienceInfoSection";
+import BasicInfo from "./components/BasicInfo";
+import ExperienceSection from "./components/ExperienceSection";
 import EducationSection from "./components/EducationSection";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [experienceSections, setExperienceSections] = useState([
+    { id: uuidv4() },
     { id: uuidv4() },
   ]);
   const [educationSections, setEducationSections] = useState([
@@ -47,26 +48,34 @@ function App() {
 
   return (
     <div className="app-container">
-      <div className="resume">
-        <BasicInfoSection />
+      <div className="resume-wrapper">
+        <BasicInfo />
 
-<div className="experience-header">Experience</div>
-        {experienceSections.map((e, index) => (
-          <ExperienceInfoSection
-            key={e.id}
-            onRemove={() => removeExperienceSection(index)}
-          />
-        ))}
-        <button onClick={addExperienceSection}>Add Job</button>
+        <div className="section-container">
+          <div className="section-header">Experience</div>
+          {experienceSections.map((e, index) => (
+            <ExperienceSection
+              key={e.id}
+              onRemove={() => removeExperienceSection(index)}
+            />
+          ))}
+          <button className="add-button" onClick={addExperienceSection}>
+            Add Job
+          </button>
+        </div>
 
-        <div className="experience-header">Education</div>
-        {educationSections.map((e, index) => (
-          <EducationSection
-            key={e.id}
-            onRemove={() => removeEducationSection(index)}
-          />
-        ))}
-        <button onClick={addEducationSection}>Add Education</button>
+        <div className="section-container">
+          <div className="section-header">Education</div>
+          {educationSections.map((e, index) => (
+            <EducationSection
+              key={e.id}
+              onRemove={() => removeEducationSection(index)}
+            />
+          ))}
+          <button className="add-button" onClick={addEducationSection}>
+            Add Education
+          </button>
+        </div>
       </div>
     </div>
   );

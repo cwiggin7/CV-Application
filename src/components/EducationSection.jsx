@@ -2,25 +2,25 @@ import PropTypes from "prop-types";
 
 function EducationSection({ onRemove }) {
   return (
-    <div className="education-container">
-      <form className="education-form">
+    <div className="container">
+      <form className="form">
         <input
           type="text"
-          placeholder="Degree and Field of Study"
-          className="degree"
+          placeholder="Degree and Major"
+          className="degree-input"
         />
-        <input
-          type="text"
-          placeholder="School or University"
-          className="school"
-        />
-        <label htmlFor="start-date">Start Date</label>
-        <input type="date" name="start-date" className="start-date" />
+        <input type="text" placeholder="School Name" className="school-input" />
+        <div className="dates">
+          <label htmlFor="start">Start Date</label>
+          <input type="date" name="start" />
 
-        <label htmlFor="end-date">End Date</label>
-        <input type="date" name="end-date" className="end-date" />
+          <label htmlFor="end">End Date</label>
+          <input type="date" name="end" />
+        </div>
       </form>
-      <button onClick={onRemove}>Remove</button>
+      <button className="remove-button" onClick={onRemove}>
+        Remove School
+      </button>
     </div>
   );
 }
