@@ -1,7 +1,7 @@
-import "./App.css";
-import BasicInfo from "./components/BasicInfo";
-import ExperienceSection from "./components/ExperienceSection";
-import EducationSection from "./components/EducationSection";
+import "../styles/App.css";
+import BasicInfo from "./BasicInfo";
+import ExperienceSection from "./ExperienceSection";
+import EducationSection from "./EducationSection";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import jsPDF from "jspdf";
