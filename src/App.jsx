@@ -4,7 +4,6 @@ import ExperienceSection from "./components/ExperienceSection";
 import EducationSection from "./components/EducationSection";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import domToImage from "dom-to-image";
 
