@@ -1,8 +1,17 @@
+.app-container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.download-button {
+  display: inline-block;
+  max-width: 100px;
+  margin: 20px auto 0;
+  white-space: normal;
+}
+
 .resume-wrapper {
-  /* margin: 20px auto; */
-  position: fixed;
-  top: 5%;
-  right: 5%;
+  margin: 20px auto;
   width: 800px;
   max-height: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -47,9 +56,11 @@ input {
   outline: none;
 }
 
-label {
-  margin: 8px 0;
-  margin-right: 10px;
+input[type="date"] {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  margin: 0 10px;
+  padding: 4px;
 }
 
 .job-input,
@@ -65,6 +76,7 @@ label {
   color: #777;
 }
 
+.dates,
 .job-input,
 .company-input,
 .city-input,

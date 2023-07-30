@@ -4,6 +4,9 @@ import ExperienceSection from "./components/ExperienceSection";
 import EducationSection from "./components/EducationSection";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+import domToImage from "dom-to-image";
 
 function App() {
   const [experienceSections, setExperienceSections] = useState([
@@ -46,8 +49,22 @@ function App() {
     });
   };
 
+  const downloadPDF = () => {
+    const capture = document.querySelector(".resume-wrapper");
+    domToImage.toPng(capture).then((imgData) => {
+      const doc = new jsPDF("p", "mm", "a4");
+      const componentWidth = doc.internal.pageSize.getWidth();
+      const componentHeight = doc.internal.pageSize.getHeight();
+      doc.addImage(imgData, "PNG", 0, 0, componentWidth, componentHeight);
+      doc.save("resume.pdf");
+    });
+  };
+
   return (
     <div className="app-container">
+      <div className="download-button">
+        <button onClick={downloadPDF}>Download as PDF</button>
+      </div>
       <div className="resume-wrapper">
         <BasicInfo />
 
