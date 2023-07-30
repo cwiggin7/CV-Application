@@ -3,7 +3,7 @@ import BasicInfo from "./BasicInfo";
 import ExperienceSection from "./ExperienceSection";
 import EducationSection from "./EducationSection";
 import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from 'uuid';
 import jsPDF from "jspdf";
 import domToImage from "dom-to-image";
 
